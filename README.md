@@ -24,15 +24,6 @@ Design a heat sink for a PCB cabinet that dissipates 10 W at ambient 20 °C with
 3. **Surrogate-guided search** — the Streamlit agent proposes new trial points in unexplored or high-interest regions
 4. **Gradient-based optimization** (L-BFGS-B) over the surrogate for each discrete N value
 
-### Key finding
-
-The Bar-Cohen & Rohsenow open-channel correlation overpredicts convection by ~7×. Inside a closed cabinet, air recirculates rather than flowing freely, capping effective h at 5–10 W/(m²·K). Fins help primarily through increased surface area, not channel flow enhancement.
-
-### Surrogate optimum (148 evaluated points)
-
-| N | w (cm) | t_b (mm) | H (mm) | T_max (°C) |
-|---|--------|----------|--------|------------|
-| 8 | 8.95   | 3.0      | 34.9   | 81.5       |
 
 ## Files
 
@@ -55,8 +46,6 @@ streamlit run icepak_app.py
 # Re-fit surrogate and update manifold predictions
 uv run update_manifold_preds.py
 
-# Run gradient-descent optimization over surrogate
-uv run optimize_gd.py
 ```
 
 ## Dependencies
